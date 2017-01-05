@@ -175,14 +175,7 @@ gulp.task('static:json', () => {
     .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('static:video', () => {
-  return gulp
-    .src('src/video/*')
-    .pipe(errorHandler())
-    .pipe(gulp.dest('public/video'));
-});
-
-gulp.task('static', ['static:html', 'static:fonts', 'static:images', 'static:json', 'static:video'], () => {
+gulp.task('static', ['static:html', 'static:fonts', 'static:images', 'static:json'], () => {
   return gulp
     .src([
       'src/favicon.ico'
