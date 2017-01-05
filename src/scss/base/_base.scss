@@ -1,0 +1,27 @@
+html {
+  min-width: 320px;
+  overflow-x: hidden;
+  width: 100%;
+  // font-size: $base-font-size;
+}
+body {
+  max-width: 1920px;
+  min-width: 320px;
+  height: 6200px;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  background: {
+    color: #ebe8eb;
+    image: url(../img/main-bg.png);
+    repeat: no-repeat;
+    position: center;
+    size: cover;
+  }
+  // font-family: $content-font;
+  // font-size: $base-font-size;
+  // color: $black;
+  // background-color: $white;
+  // line-height: $base-line-height;
+  padding-right: 0 !important;
+}
