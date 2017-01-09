@@ -1,0 +1,41 @@
+.nav {
+  position: absolute;
+  bottom: 50px;
+  left: 90px;
+  background-color: $white;
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  &__item {
+    width: 25%;
+    min-width: 240px;
+    padding: 10px;
+    border-right: 1px solid rgba($black, 0.08);
+  }
+  &__link {
+    display: block;
+    padding: 50px;
+    position: relative;
+    font-family: $main-font;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    color: $black;
+    &::before {
+      content: "/";
+      font-family: $main-font;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1;
+      color: $light-grey;
+      position: absolute;
+      left: -10px;
+      top: -15px;
+    }
+  }
+}

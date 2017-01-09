@@ -1,0 +1,58 @@
+.top {
+  width: 100%;
+  height: 924px;
+  position: relative;
+  border-bottom: 9px solid $top-border;
+  box-shadow: 0 2px 32px rgba($black, 0.14);
+  background: {
+    image: url(../img/top-bg.jpg);
+    repeat: no-repeat;
+    position: center top;
+    size: cover;
+  }
+  &__about {
+    max-width: 580px;
+    padding: 90px 130px 70px 135px;
+    box-shadow: 0 2px 32px rgba($black, 0.14);
+    border-bottom: 9px solid $accent;
+    background: {
+      color: $white;
+      image: url(../img/top-about-bg.png);
+      repeat: no-repeat;
+      position: center;
+    }
+    position: absolute;
+    top: 120px;
+    left: -60px;
+    &.decor {
+      &::before {
+        width: 1px;
+        height: 70px;
+        top: 0;
+        left: 180px;
+      }
+      &::after {
+        left: 175px;
+        top: 70px;
+      }
+    }
+  }
+  &__h1 {
+    font-family: $main-font;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 42px;
+    color: $black;
+    margin: 0 auto 20px;
+    text-transform: uppercase;
+  }
+  &__lead {
+    font-family: $main-font;
+    font-size: 40px;
+    font-weight: 100;
+    line-height: 58px;
+    color: $black;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+}

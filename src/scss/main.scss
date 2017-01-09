@@ -8,5 +8,11 @@
 
 @import "components/components";
 
+@import "layouts/wrap";
 @import "layouts/header";
+@import "layouts/main";
+@import "layouts/nav";
 @import "layouts/footer";
+
+@import "screens/top";
+@import "screens/about";
