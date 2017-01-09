@@ -1,0 +1,60 @@
+// Contacts
+.contacts {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+  }
+  &__text {
+    font-family: $main-font;
+    font-size: 30px;
+    line-height: 1;
+    color: $white;
+    letter-spacing: 3px;
+  }
+  &__pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $white;
+    font-family: "Ionicons";
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px;
+    color: $black;
+    margin-right: 14px;
+  }
+}
+
+// Decor
+.decor {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+  }
+  &::before {
+    width: 40px;
+    height: 1px;
+    background-color: rgba($accent-dark, 0.2);
+    position: absolute;
+    left: 0;
+    top: 100px;
+  }
+  &::after {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: rgba($accent-dark, 0.2);
+    position: absolute;
+    left: 40px;
+    top: 95px;
+    box-shadow: inset 0 0 0 1px rgba($accent-dark, 0.2), inset 0 0 0 3px $bg-color;
+  }
+}

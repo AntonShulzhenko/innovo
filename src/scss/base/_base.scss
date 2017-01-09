@@ -2,7 +2,7 @@ html {
   min-width: 320px;
   overflow-x: hidden;
   width: 100%;
-  // font-size: $base-font-size;
+  font-size: $base-font-size;
 }
 body {
   max-width: 1920px;
@@ -12,16 +12,16 @@ body {
   margin-left: auto;
   margin-right: auto;
   background: {
-    color: #ebe8eb;
-    image: url(../img/main-bg.png);
+    color: $bg-color;
+    // image: url(../img/main-bg.png);
     repeat: no-repeat;
     position: center;
     size: cover;
   }
-  // font-family: $content-font;
-  // font-size: $base-font-size;
-  // color: $black;
-  // background-color: $white;
-  // line-height: $base-line-height;
+  font-family: $content-font;
+  font-size: $base-font-size;
+  font-weight: 400;
+  color: $black;
+  line-height: $base-line-height;
   padding-right: 0 !important;
 }

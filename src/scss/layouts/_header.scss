@@ -1,0 +1,24 @@
+.header {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-right: 50px;
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 180px;
+    background-color: $logo-bg;
+    img {
+      max-width: 200px;
+    }
+  }
+  &__contacts {
+    margin-top: 38px;
+  }
+}
