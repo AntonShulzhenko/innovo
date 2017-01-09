@@ -13,19 +13,25 @@
   }
   &__item {
     width: 25%;
-    min-width: 240px;
+    min-width: 260px;
     padding: 10px;
     border-right: 1px solid rgba($black, 0.08);
+    &:last-child {
+      border-right: none;
+    }
   }
   &__link {
     display: block;
-    padding: 50px;
+    padding: 50px 50px 42px;
+    background-color: $white;
+    border-bottom: 8px solid $white;
     position: relative;
     font-family: $main-font;
     font-size: 24px;
     font-weight: 700;
     line-height: 36px;
     color: $black;
+    transition: all $duration $timing-function, color 200ms $timing-function;
     &::before {
       content: "/";
       font-family: $main-font;
@@ -34,8 +40,19 @@
       line-height: 1;
       color: $light-grey;
       position: absolute;
-      left: -10px;
-      top: -15px;
+      left: 35px;
+      top: 40px;
+      transition: color $duration $timing-function;
+    }
+    &:hover {
+      background-color: $accent-dark;
+      border-bottom: 8px solid $accent;
+      box-shadow: 0 7px 30px rgba($black, 0.34);
+      text-decoration: none;
+      color: $white;
+      &::before {
+        color: $white;
+      }
     }
   }
 }

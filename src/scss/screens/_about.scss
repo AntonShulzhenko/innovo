@@ -1,4 +1,39 @@
 .about {
   background-color: $white;
-  padding: 100px 0;
+  padding: 170px 120px 200px;
+  &.decor {
+    &::before {
+      top: 195px;
+    }
+    &::after {
+      top: 190px;
+    }
+  }
+  &__h2 {
+    margin-top: 0;
+    margin-bottom: 70px;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+  &__item {
+    width: 25%;
+    &_carousel {
+      width: 55%;
+      padding: 0 120px;
+    }
+    &_benefits {
+      width: 20%;
+      .benefits {
+        margin-top: 40px;
+      }
+    }
+  }
+  &__p {
+    font-size: 18px;
+    line-height: 36px;
+    margin-top: 40px;
+  }
 }

@@ -7,7 +7,6 @@ html {
 body {
   max-width: 1920px;
   min-width: 320px;
-  height: 6200px;
   overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
@@ -49,4 +48,9 @@ h5 {
 }
 h6 {
   font-size: 18px;
+}
+p {
+  font-family: $content-font;
+  font-weight: 400;
+  font-size: $base-font-size;
 }

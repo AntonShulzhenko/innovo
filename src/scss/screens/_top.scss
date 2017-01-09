@@ -10,9 +10,10 @@
     position: center top;
     size: cover;
   }
+  z-index: 2;
   &__about {
     max-width: 580px;
-    padding: 90px 130px 70px 135px;
+    padding: 80px 135px 70px 125px;
     box-shadow: 0 2px 32px rgba($black, 0.14);
     border-bottom: 9px solid $accent;
     background: {
@@ -24,6 +25,7 @@
     position: absolute;
     top: 120px;
     left: -60px;
+    z-index: 2;
     &.decor {
       &::before {
         width: 1px;

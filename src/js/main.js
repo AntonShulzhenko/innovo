@@ -6,3 +6,4 @@ function render(elem, tplName, data = {}) {
 }
 
 //=require 'templates/*.js'
+//=require 'plugins/*.js'
