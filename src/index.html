@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Innovo</title>
+  <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -28,7 +30,7 @@
 
     <main class="main" id="main">
       <section class="top">
-        <div class="top__about decor">
+        <div class="top__about decor box">
           <h1 class="top__h1">Стоматологическая клиника innovo</h1>
           <p class="top__lead">Лучшие специалисты<br> и опыт -<br> залог здоровья наших клиентов</p>
         </div>
@@ -87,15 +89,74 @@
           </div>
         </div>
       </section>
+
+      <section class="services decor">
+        <div class="services__header">
+          <h2 class="services__heading box">Цены на услуги</h2>
+          <div class="services__banner"></div>
+        </div>
+
+        <div class="services__content">
+          <div class="price-table">
+            <div class="price-table__row">
+              <div class="price-table__left">
+                <h2 class="price-table__heading">Реставрация зубов</h2>
+              </div>
+
+              <div class="price-table__right">
+                <div class="price-table__service">
+                  <p class="name">Лечение кариеса -</p>
+                  <p class="price">
+                    <small>от</small>
+                    <span>750</span>
+                    <small>грн</small>
+                  </p>
+                </div>
+
+                <div class="price-table__service">
+                  <p class="name">Реставрация/восстановление зубов -</p>
+                  <p class="price">
+                    <small>от</small>
+                    <span>2000</span>
+                    <small>грн</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="price-table__row">
+              <div class="price-table__left">
+                <h2 class="price-table__heading">Лечение корневых каналов зубов</h2>
+              </div>
+
+              <div class="price-table__right">
+                <div class="price-table__service">
+                  <p class="name">Лечение каналов	-</p>
+                  <p class="price">
+                    <small>от</small>
+                    <span>750</span>
+                    <small>грн</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section decor">
+        <h2 class="contact-section__heading">Контактные даные</h2>
+        <div id="map"></div>
+      </section>
     </main>
 
     <footer class="footer decor">
       <p class="footer__copy">2016 — СТоматологическая клиника инново. Все права защищены</p>
     </footer>
   </div>
-
   <script src="js/vendor.js"></script>
   <script src="js/templates.js"></script>
   <script src="js/main.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNvT3YW0fmkDHPlqmidQXATxvNAN_TiYw&callback=initMap"></script>
 </body>
 </html>

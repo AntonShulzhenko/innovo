@@ -14,14 +14,6 @@
   &__about {
     max-width: 580px;
     padding: 80px 135px 70px 125px;
-    box-shadow: 0 2px 32px rgba($black, 0.14);
-    border-bottom: 9px solid $accent;
-    background: {
-      color: $white;
-      image: url(../img/top-about-bg.png);
-      repeat: no-repeat;
-      position: center;
-    }
     position: absolute;
     top: 120px;
     left: -60px;
