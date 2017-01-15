@@ -1,5 +1,5 @@
 .services {
-  padding: 130px 0 130px 80px;
+  padding: 60px 0;
   background: {
     image: url(../img/s-lines.png);
     repeat: no-repeat;
@@ -7,30 +7,86 @@
     size: cover;
     color: $white;
   }
+  @include for-big-desktop-up {
+    padding: 130px 0 130px 80px;
+  }
+  @include for-desktop-only {
+    padding: 100px 0 100px 80px;
+  }
+  @include for-tablet-landscape-only {
+    padding: 80px 0 80px 80px;
+  }
+  @include for-tablet-portait-only {
+    padding: 80px 0;
+  }
+  &.decor {
+    &::before {
+      @media (max-width: 899px) {
+        top: 10px
+      }
+    }
+    &::after {
+      @media (max-width: 899px) {
+        top: 5px
+      }
+    }
+  }
   &__header {
     width: 100%;
-    height: 620px;
     position: relative;
   }
   &__heading {
     position: absolute;
     left: 25px;
-    top: -120px;
     font-size: 36px;
     line-height: 48px;
     padding: 60px;
     margin: 0;
     max-width: 300px;
     z-index: 2;
+    @include for-big-desktop-up {
+      top: -120px;
+    }
+    @include for-desktop-only {
+      top: -90px;
+    }
+    @include for-tablet-landscape-only {
+      top: -70px;
+      padding: 40px;
+      max-width: 250px;
+    }
+    @include for-tablet-portait-only {
+      top: -50px;
+      padding: 30px;
+      max-width: 230px;
+    }
+    @include for-phone-only {
+      top: -30px;
+      left: 0;
+      padding: 20px;
+      max-width: 200px;
+      font-size: 30px;
+      line-height: 40px;
+      border-width: 4px;
+    }
   }
   &__banner {
     position: relative;
-    height: 620px;
+    height: 250px;
     background: {
       image: url(../img/s-bg.jpg);
       repeat: no-repeat;
       position: center;
       size: cover;
+    }
+    @include for-tablet-landscape-up {
+      height: 400px;
+    }
+    @include for-tablet-portait-only {
+      height: 300px;
+    }
+    @media (min-width: 1440px) {
+      height: 620px;
     }
     &::before {
       content: "";
@@ -46,5 +102,9 @@
   &__content {
     max-width: 1300px;
     margin: 80px auto 0;
+    padding: 0 15px;
+    @include for-phone-only {
+      margin-top: 60px;
+    }
   }
 }

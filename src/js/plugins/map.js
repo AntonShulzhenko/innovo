@@ -179,14 +179,22 @@ function initMap() {
       ]
     }
   ];
-  const markerImage  = 'img/map-marker.png';
-  let markerLatLng   = {lat: 50.457492, lng: 30.519226};
-  let mapLatLng      = {lat: 50.457848, lng: 30.506466};
+  const markerImages = ['img/map-marker.png', 'img/map-marker-sm.png'];
+  const markerLatLng = {lat: 50.457492, lng: 30.519226};
+  const mapPosition  = [markerLatLng, {lat: 50.458290, lng: 30.519077}];
+  const windowWidth  = window.innerWidth;
+  let markerIcon     = markerImages[0];
+  let mapLatLng      = mapPosition[0];
   let marker;
   let map;
 
+  if(windowWidth < 600) {
+    mapLatLng = mapPosition[1];
+    markerIcon = markerImages[1];
+  }
+
   map = new google.maps.Map(mapContainer, {
-    center: markerLatLng,
+    center: mapLatLng,
     zoom: 17,
     styles: mapStyles,
     scrollwheel: false
@@ -195,6 +203,6 @@ function initMap() {
   marker = new google.maps.Marker({
     position: markerLatLng,
     map: map,
-    icon: markerImage
+    icon: markerIcon
   });
 }

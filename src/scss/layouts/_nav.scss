@@ -3,6 +3,25 @@
   bottom: 50px;
   left: 90px;
   background-color: $white;
+  @media (max-width: 1440px) {
+    left: 50px;
+  }
+  @media (max-width: 1024px) {
+    left: 30px;
+  }
+  @media (max-width: 899px) {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
   &__list {
     list-style: none;
     display: flex;
@@ -10,12 +29,29 @@
     align-items: stretch;
     margin-bottom: 0;
     padding: 0;
+    @media (max-width: 899px) {
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 90px 15px 0;
+    }
   }
   &__item {
     width: 25%;
     min-width: 260px;
     padding: 10px;
     border-right: 1px solid rgba($black, 0.08);
+    @media (max-width: 1440px) {
+      min-width: 200px;
+    }
+    @media (max-width: 1024px) {
+      min-width: 170px;
+    }
+    @media (max-width: 899px) {
+      min-width: 100%;
+      width: 100%;
+      border: none;
+      padding: 0;
+    }
     &:last-child {
       border-right: none;
     }
@@ -32,6 +68,21 @@
     line-height: 36px;
     color: $black;
     transition: all $duration $timing-function, color 200ms $timing-function;
+    @media (max-width: 1440px) {
+      padding: 20px 40px;
+      font-size: 20px;
+      line-height: 30px;
+    }
+    @media (max-width: 1024px) {
+      padding: 10px 20px;
+    }
+    @media (max-width: 899px) {
+      padding: 15px 20px;
+      border-bottom: none;
+      br {
+        display: none;
+      }
+    }
     &::before {
       content: "/";
       font-family: $main-font;
@@ -43,6 +94,14 @@
       left: 35px;
       top: 40px;
       transition: color $duration $timing-function;
+      @media (max-width: 1440px) {
+        left: 25px;
+        top: 20px;
+      }
+      @media (max-width: 1024px) {
+        left: 5px;
+        top: 0px;
+      }
     }
     &:hover {
       background-color: $accent-dark;
@@ -50,8 +109,17 @@
       box-shadow: 0 7px 30px rgba($black, 0.34);
       text-decoration: none;
       color: $white;
+      @media (max-width: 899px) {
+        background-color: transparent;
+        border-bottom: none;
+        box-shadow: none;
+        color: $black;
+      }
       &::before {
         color: $white;
+        @media (max-width: 899px) {
+          color: $light-grey;
+        }
       }
     }
   }

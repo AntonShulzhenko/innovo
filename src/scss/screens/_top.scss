@@ -11,6 +11,34 @@
     size: cover;
   }
   z-index: 2;
+  @media (max-width: 1440px) {
+    height: auto;
+    min-height: 700px;
+  }
+  @media (max-width: 1024px) {
+    min-height: 600px;
+  }
+  @include for-tablet-portait-only {
+    min-height: auto;
+    padding-top: 70px;
+    padding-bottom: 100px;
+    z-index: 9;
+  }
+  @include for-phone-only {
+    min-height: auto;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba($accent, 0.5);
+    }
+  }
   &__about {
     max-width: 580px;
     padding: 80px 135px 70px 125px;
@@ -24,11 +52,59 @@
         height: 70px;
         top: 0;
         left: 180px;
+        @media (max-width: 1440px) {
+          height: 60px;
+          left: 110px;
+        }
+        @media (max-width: 899px) {
+          height: 30px;
+          left: 80px;
+        }
+        @include for-phone-only {
+          height: 20px;
+          left: 40px;
+        }
       }
       &::after {
         left: 175px;
         top: 70px;
+        @media (max-width: 1440px) {
+          top: 60px;
+          left: 105px;
+        }
+        @media (max-width: 899px) {
+          top: 30px;
+          left: 75px;
+        }
+        @include for-phone-only {
+          top: 20px;
+          left: 35px;
+        }
       }
+    }
+    @media (max-width: 1440px) {
+      max-width: 400px;
+      padding: 80px 60px 60px;
+      top: 80px;
+    }
+    @media (max-width: 1024px) {
+      max-width: 320px;
+      padding: 80px 40px 40px;
+    }
+    @media (max-width: 899px) {
+      position: relative;
+      left: 0;
+      top: 0;
+    }
+    @include for-tablet-portait-only {
+      margin-left: 20px;
+      padding-top: 40px;
+    }
+    @include for-phone-only {
+      margin-left: 0;
+      padding: 40px 50px;
+      width: 100%;
+      max-width: 320px;
     }
   }
   &__h1 {
@@ -39,6 +115,17 @@
     color: $black;
     margin: 0 auto 20px;
     text-transform: uppercase;
+    @media (max-width: 1440px) {
+      line-height: 36px;
+    }
+    @media (max-width: 1024px) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+    @include for-phone-only {
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
   }
   &__lead {
     font-family: $main-font;
@@ -48,5 +135,13 @@
     color: $black;
     margin-bottom: 0;
     text-transform: uppercase;
+    @media (max-width: 1440px) {
+      font-size: 30px;
+      line-height: 48px;
+    }
+    @media (max-width: 1024px) {
+      font-size: 24px;
+      line-height: 36px;
+    }
   }
 }

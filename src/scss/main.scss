@@ -1,9 +1,10 @@
 @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap.scss';
 @import 'node_modules/font-awesome/scss/font-awesome.scss';
-@import "node_modules/hamburgers/_sass/hamburgers/hamburgers";
 @import "libs/owl-carousel";
 
 @import "base/variables";
+@import "node_modules/hamburgers/_sass/hamburgers/hamburgers";
+@import "utils/mixins";
 @import "base/fonts";
 @import "base/base";
 
@@ -14,6 +15,7 @@
 @import "layouts/main";
 @import "layouts/nav";
 @import "layouts/footer";
+@import "layouts/mobile";
 
 @import "screens/top";
 @import "screens/about";
