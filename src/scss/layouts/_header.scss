@@ -12,10 +12,10 @@
   align-items: flex-start;
   padding-right: 50px;
   @include for-tablet-portait-only {
-    padding-right: 30px;
+    padding-right: 70px;
   }
   @include for-phone-only {
-    padding-right: 16px;
+    padding-right: 70px;
     align-items: center;
   }
   &__logo {
