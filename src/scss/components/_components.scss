@@ -71,7 +71,7 @@
 // Benefits
 .benefits {
   &__item {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   &__h3 {
     font-family: $main-font;
@@ -80,11 +80,11 @@
     line-height: 48px;
     color: $black;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   &__p {
     max-width: 280px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 25px;
     font-weight: 700;
     text-transform: uppercase;

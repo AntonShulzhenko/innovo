@@ -1,7 +1,6 @@
 .services {
   padding: 60px 0;
   background: {
-    // image: url(../img/s-lines.png);
     repeat: no-repeat;
     position: center;
     size: cover;
@@ -22,12 +21,19 @@
   &.decor {
     &::before {
       @media (max-width: 899px) {
-        top: 10px
+        top: 5px;
+        z-index: 3;
+      }
+      @include for-phone-only {
+        display: none;
       }
     }
     &::after {
       @media (max-width: 899px) {
-        top: 5px
+        top: 0px;
+      }
+      @include for-phone-only {
+        display: none;
       }
     }
   }
@@ -48,7 +54,9 @@
       top: -120px;
     }
     @include for-desktop-only {
-      top: -90px;
+      top: -100px;
+      padding: 40px;
+      max-width: 250px;
     }
     @include for-tablet-landscape-only {
       top: -70px;
@@ -56,17 +64,17 @@
       max-width: 250px;
     }
     @include for-tablet-portait-only {
-      top: -50px;
-      padding: 30px;
-      max-width: 230px;
+      top: -100px;
+      padding: 20px;
+      max-width: 190px;
     }
     @include for-phone-only {
-      top: -30px;
+      top: -90px;
       left: 0;
       padding: 20px;
-      max-width: 200px;
-      font-size: 30px;
-      line-height: 40px;
+      max-width: 180px;
+      font-size: 24px;
+      line-height: 30px;
       border-width: 4px;
     }
   }
@@ -74,9 +82,9 @@
     position: relative;
     height: 250px;
     background: {
-      image: url(../img/s-bg.jpg);
+      image: url(../img/s-bg-2.jpg);
       repeat: no-repeat;
-      position: center;
+      position: left center;
       size: cover;
     }
     @include for-tablet-landscape-up {
@@ -84,6 +92,9 @@
     }
     @include for-tablet-portait-only {
       height: 300px;
+    }
+    @include for-phone-only {
+      background-position: 32% center;
     }
     @media (min-width: 1440px) {
       height: 620px;

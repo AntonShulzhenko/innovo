@@ -179,7 +179,7 @@ function initMap() {
       ]
     }
   ];
-  const markerImages = ['img/map-marker.png', 'img/map-marker-sm.png'];
+  const markerImages = ['img/map-marker.png', 'img/6666.svg'];
   const markerLatLng = {lat: 50.457492, lng: 30.519226};
   const mapPosition  = [markerLatLng, {lat: 50.458290, lng: 30.519077}];
   const windowWidth  = window.innerWidth;
@@ -197,7 +197,8 @@ function initMap() {
     center: mapLatLng,
     zoom: 17,
     styles: mapStyles,
-    scrollwheel: false
+    scrollwheel: false,
+    disableDefaultUI: true
   });
 
   marker = new google.maps.Marker({

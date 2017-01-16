@@ -7,4 +7,4 @@ function render(elem, tplName, data = {}) {
 
 //=require 'helpers/*.js'
 //=require 'templates/*.js'
-//=require 'plugins/*.js'
+//=require 'common/*.js'
