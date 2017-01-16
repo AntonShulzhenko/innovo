@@ -13,17 +13,19 @@
     el.classList.toggle(className);
   }
 
-  nav.addEventListener('click', (e) => {
-    if(e.target.classList.contains('nav__link')) {
+  if(window.innerWidth < 900) {
+    nav.addEventListener('click', (e) => {
+      if(e.target.classList.contains('nav__link')) {
+        toggleClass(nav, 'is-active');
+        toggleClass(btn, 'is-active');
+        toggleClass(top, 'is-active');
+      }
+    });
+
+    btn.addEventListener('click', (e) => {
       toggleClass(nav, 'is-active');
       toggleClass(btn, 'is-active');
       toggleClass(top, 'is-active');
-    }
-  });
-
-  btn.addEventListener('click', (e) => {
-    toggleClass(nav, 'is-active');
-    toggleClass(btn, 'is-active');
-    toggleClass(top, 'is-active');
-  });
+    });
+  }
 }());
