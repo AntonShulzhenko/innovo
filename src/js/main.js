@@ -5,5 +5,6 @@ function render(elem, tplName, data = {}) {
   elem.innerHTML = templates[tplName](data);
 }
 
+//=require 'helpers/*.js'
 //=require 'templates/*.js'
 //=require 'plugins/*.js'
