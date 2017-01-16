@@ -3,3 +3,4 @@
 //=require 'handlebars/dist/handlebars.runtime.js'
 //=require 'gsap/src/minified/TweenMax.min.js'
 //=require 'libs/owl.carousel.min.js'
+//=require 'libs/pace.min.js'

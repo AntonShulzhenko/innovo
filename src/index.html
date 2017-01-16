@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+  <div id="loader"></div>
+  
   <div id="root" class="wrap">
     <div class="overlay"></div>
 
@@ -42,7 +44,7 @@
     </header>
 
     <main class="main" id="main">
-      <section class="top">
+      <section class="top" id="top">
         <div class="top__about decor box">
           <h1 class="top__h1">Стоматологическая клиника innovo</h1>
           <p class="top__lead">Лучшие специалисты<br> и опыт -<br> залог здоровья наших клиентов</p>
@@ -332,7 +334,12 @@
     <footer class="footer decor">
       <p class="footer__copy">2016 — СТоматологическая клиника инново. Все права защищены</p>
     </footer>
+
+    <a class="go-top scroll-to" href="#top">
+      <i class="ion-ios-arrow-thin-up"></i>
+    </a>
   </div>
+
   <script src="js/vendor.js"></script>
   <script src="js/templates.js"></script>
   <script src="js/main.js"></script>

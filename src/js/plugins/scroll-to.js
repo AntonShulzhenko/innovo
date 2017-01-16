@@ -9,13 +9,13 @@
     });
   })();
 
-  // var goTop = $('.go-top');
-  //
-  // $(window).on('scroll', function() {
-  //   if($(window).scrollTop() > 500) {
-  //     goTop.addClass('is-visible');
-  //   } else {
-  //     goTop.removeClass('is-visible');
-  //   }
-  // });
+  var goTop = $('.go-top');
+
+  $(window).on('scroll', function() {
+    if($(window).scrollTop() > 500) {
+      goTop.addClass('is-visible');
+    } else {
+      goTop.removeClass('is-visible');
+    }
+  });
 })(jQuery);
