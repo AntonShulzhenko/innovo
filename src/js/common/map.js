@@ -179,7 +179,7 @@ function initMap() {
       ]
     }
   ];
-  const markerImages = ['img/map-marker.png', 'img/6666.svg'];
+  const markerImages = ['img/buble-250px.svg', 'img/buble-150px.svg'];
   const markerLatLng = {lat: 50.457492, lng: 30.519226};
   const mapPosition  = [markerLatLng, {lat: 50.458290, lng: 30.519077}];
   const windowWidth  = window.innerWidth;
