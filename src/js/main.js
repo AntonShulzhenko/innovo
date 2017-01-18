@@ -1,10 +1,11 @@
 'use strict';
-const templates = window.templates;
+var templates = window.templates;
 
-function render(elem, tplName, data = {}) {
+function render(elem, tplName, data) {
+  data = data || {};
   elem.innerHTML = templates[tplName](data);
 }
 
 //=require 'helpers/*.js'
-//=require 'templates/*.js'
+//=require 'loader/*.js'
 //=require 'common/*.js'

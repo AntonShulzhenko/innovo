@@ -178,7 +178,7 @@ gulp.task('static:json', () => {
 gulp.task('static', ['static:html', 'static:fonts', 'static:images', 'static:json'], () => {
   return gulp
     .src([
-      'src/favicon.ico'
+      'src/*.png', 'src/*.svg', 'src/*.json', 'src/*.xml'
     ])
     .pipe(errorHandler())
     .pipe(gulp.dest('public'));

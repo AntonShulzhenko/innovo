@@ -1,6 +1,6 @@
 function initMap() {
-  const mapContainer = document.getElementById('map');
-  const mapStyles    = [
+  var mapContainer = document.getElementById('map');
+  var mapStyles    = [
     {
       'featureType': 'all',
       'elementType': 'labels.text.fill',
@@ -179,14 +179,14 @@ function initMap() {
       ]
     }
   ];
-  const markerImages = ['img/buble-250px.svg', 'img/buble-150px.svg'];
-  const markerLatLng = {lat: 50.457492, lng: 30.519226};
-  const mapPosition  = [markerLatLng, {lat: 50.458290, lng: 30.519077}];
-  const windowWidth  = window.innerWidth;
-  let markerIcon     = markerImages[0];
-  let mapLatLng      = mapPosition[0];
-  let marker;
-  let map;
+  var markerImages = ['img/buble-250px.svg', 'img/buble-150px.svg'];
+  var markerLatLng = {lat: 50.457492, lng: 30.519226};
+  var mapPosition  = [markerLatLng, {lat: 50.458290, lng: 30.519077}];
+  var windowWidth  = window.innerWidth;
+  var markerIcon     = markerImages[0];
+  var mapLatLng      = mapPosition[0];
+  var marker;
+  var map;
 
   if(windowWidth < 600) {
     mapLatLng = mapPosition[1];

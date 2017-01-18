@@ -1,22 +1,23 @@
 (function() {
-  const mobileContainer   = document.querySelector('.mobile');
-  const mobileLink        = mobileContainer.querySelector('.mobile__link');
-  const close             = mobileContainer.querySelector('.mobile__close');
-  const headerContacts    = document.querySelector('.header__contacts');
-  const location          = headerContacts.querySelector('.contacts__item_address');
-  const phone             = headerContacts.querySelector('.contacts__item_phone');
-  const overlay           = document.querySelector('.overlay');
-  const mobAddress        = document.querySelector('.mob-address a');
-  const tlOpen            = new TimelineMax();
-  const tlClose           = new TimelineMax();
-  const animationDuration = 0.4;
-  const timingFunction    = 'Power1.easeInOut';
-  let winWidth            = window.innerWidth;
+  var mobileContainer   = document.querySelector('.mobile');
+  var mobileLink        = mobileContainer.querySelector('.mobile__link');
+  var close             = mobileContainer.querySelector('.mobile__close');
+  var headerContacts    = document.querySelector('.header__contacts');
+  var location          = headerContacts.querySelector('.contacts__item_address');
+  var phone             = headerContacts.querySelector('.contacts__item_phone');
+  var overlay           = document.querySelector('.overlay');
+  var mobAddress        = document.querySelector('.mob-address a');
+  var tlOpen            = new TimelineMax();
+  var tlClose           = new TimelineMax();
+  var animationDuration = 0.4;
+  var timingFunction    = 'Power1.easeInOut';
+  var winWidth            = window.innerWidth;
 
   function setMobileAddress() {
-    const text = location.querySelector('.contacts__text').innerHTML;
-    const href = `http://maps.google.com?q=${text}`;
-    mobAddress.innerHTML = text;
+    var text = location.querySelector('.contacts__text').innerHTML;
+    var href = 'http://maps.google.com?q=' + text;
+    var small = '<small>построить маршрут</small>';
+    mobAddress.innerHTML = text + small;
     mobAddress.setAttribute('href', href);
   }
 
@@ -25,17 +26,22 @@
   }
 
   function setLink(el) {
-    const text = el.querySelector('.contacts__text').innerHTML;
-    let href = 'javascript:void(0)';
-
-    mobileLink.innerHTML = text;
+    var text = el.querySelector('.contacts__text').innerHTML;
+    var href = 'javascript:void(0)';
+    var descr;
+    var small;
 
     if(el.classList.contains('contacts__item_phone')) {
-      href = `tel:${text}`;
+      href = 'tel:' + text;
+      descr = 'позвонить';
     } else if(el.classList.contains('contacts__item_address')) {
-      href = `http://maps.google.com?q=${text}`;
+      href = 'http://maps.google.com?q=' + text;
+      descr = 'построить маршрут';
     }
 
+    small = '<small>' + descr + '</small>';
+
+    mobileLink.innerHTML = text + small;
     mobileLink.setAttribute('href', href);
   }
 
@@ -68,7 +74,7 @@
 
     enableScroll();
 
-    setTimeout(() => {
+    setTimeout(function() {
       clearLink();
     }, 250);
   }

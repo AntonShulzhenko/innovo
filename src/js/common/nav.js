@@ -1,7 +1,7 @@
 (function() {
-  const nav = document.querySelector('.nav');
-  const btn = document.querySelector('.menu-btn');
-  const top = document.querySelector('.top');
+  var nav = document.querySelector('.nav');
+  var btn = document.querySelector('.menu-btn');
+  var top = document.querySelector('.top');
 
   function toggleClass(el, className) {
     if(!el) return;
@@ -14,7 +14,7 @@
   }
 
   if(window.innerWidth < 900) {
-    nav.addEventListener('click', (e) => {
+    nav.addEventListener('click', function(e) {
       if(e.target.classList.contains('nav__link')) {
         toggleClass(nav, 'is-active');
         toggleClass(btn, 'is-active');
@@ -22,7 +22,7 @@
       }
     });
 
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', function(e) {
       toggleClass(nav, 'is-active');
       toggleClass(btn, 'is-active');
       toggleClass(top, 'is-active');
