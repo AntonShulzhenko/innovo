@@ -70,9 +70,6 @@
       }
     }
     &:not(:first-child) {
-      @media (max-width: 1440px) {
-        width: 45%;
-      }
       @media (max-width: 1199px) {
         width: 100%;
         margin-right: 0;
@@ -82,7 +79,8 @@
     &_carousel {
       width: 42%;
       @media (max-width: 1440px) {
-        margin-right: 10%;
+        margin-right: 5%;
+        width: 60%;
       }
       .owl-carousel {
         @media (max-width: 1199px) {
@@ -180,6 +178,9 @@
     }
     &_benefits {
       width: 20%;
+      @media (max-width: 1440px) {
+        width: 35%;
+      }
       .benefits {
         &__item {
           @media (max-width: 1440px) {
