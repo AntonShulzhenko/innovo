@@ -22,9 +22,27 @@
   &__heading {
     position: relative;
     z-index: 2;
+    margin-bottom: 10px;
     @include for-phone-only {
-      margin: 0;
+      margin: 0 0 10px;
       font-size: 26px;
+    }
+  }
+  &__link {
+    display: block;
+    font-family: $main-font;
+    font-size: 16px;
+    line-height: 25px;
+    color: $black;
+    position: relative;
+    z-index: 3;
+    &:hover {
+      text-decoration: underline;
+      color: $black;
+    }
+    &:focus {
+      text-decoration: none;
+      color: $black;
     }
   }
   #map {
