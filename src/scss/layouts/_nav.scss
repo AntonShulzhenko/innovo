@@ -50,7 +50,7 @@
   }
   &__item {
     width: 25%;
-    min-width: 260px;
+    min-width: 230px;
     padding: 10px;
     border-right: 1px solid rgba($black, 0.08);
     @media (max-width: 1440px) {
@@ -71,7 +71,7 @@
   }
   &__link {
     display: block;
-    padding: 50px 50px 42px;
+    padding: 40px 50px 32px;
     background-color: $white;
     border-bottom: 8px solid $white;
     position: relative;
@@ -85,9 +85,10 @@
       padding: 20px 40px;
       font-size: 20px;
       line-height: 30px;
+      border-width: 4px;
     }
     @media (max-width: 1024px) {
-      padding: 10px 20px;
+      padding: 20px 30px;
     }
     @media (max-width: 899px) {
       padding: 15px 20px;
@@ -112,8 +113,12 @@
         top: 20px;
       }
       @media (max-width: 1024px) {
+        left: 15px;
+        top: 5px;
+      }
+      @media (max-width: 900px) {
         left: 5px;
-        top: 0px;
+        top: 0;
       }
     }
     &:hover {
@@ -122,6 +127,9 @@
       box-shadow: 0 7px 30px rgba($black, 0.34);
       text-decoration: none;
       color: $white;
+      @media (max-width: 1440px) {
+        border-width: 4px;
+      }
       @media (max-width: 899px) {
         background-color: transparent;
         border-bottom: none;
