@@ -3,24 +3,24 @@ const sass         = require('gulp-sass');
 const postcss      = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const sourcemaps   = require('gulp-sourcemaps');
-const concat       = require('gulp-concat');
 const include      = require('gulp-include');
 const gutil        = require('gulp-util');
 const plumber      = require('gulp-plumber');
 const notify       = require('gulp-notify');
-const handlebars   = require('gulp-handlebars');
-const wrap         = require('gulp-wrap');
-const declare      = require('gulp-declare');
 const cache        = require('gulp-cached');
 const eslint       = require('gulp-eslint');
-const merge        = require('merge-stream');
 const sequence     = require('run-sequence');
 const path         = require('path');
 const del          = require('del');
 const server       = require('browser-sync').create();
 const imagemin     = require('gulp-imagemin');
-const min          = require('gulp-clean-css');
-const uglify       = require('gulp-uglify');
+const pug          = require('gulp-pug');
+const swig         = require('gulp-swig');
+const data         = require('gulp-data');
+
+// const min          = require('gulp-clean-css');
+// const uglify       = require('gulp-uglify');
+
 
 const errorHandler = (title) => plumber(
   title = 'Error',
@@ -30,7 +30,8 @@ const errorHandler = (title) => plumber(
       message: '<%= error.message %>',
       sound: 'Submarine'
     })
-  });
+  }
+);
 
 
 gulp.task('server', () => {
@@ -49,6 +50,17 @@ gulp.task('server', () => {
     open: gutil.env.open !== false,
     ghostMode: false
   });
+});
+
+
+gulp.task('pug', () => {
+  gulp.src('./src/templates/*.pug')
+    .pipe(data((file) => require('./src/json/data.json')))
+    .pipe(pug({
+      pretty: true,
+      cache: false
+    }))
+    .pipe(gulp.dest('./public/'));
 });
 
 
@@ -79,13 +91,16 @@ const bundleScripts = (src) => {
     .pipe(gulp.dest('public/js'));
 };
 
+
 gulp.task('scripts:vendor', () => {
   return bundleScripts('src/js/vendor.js');
 });
 
+
 gulp.task('scripts:main', () => {
   return bundleScripts('src/js/main.js');
 });
+
 
 gulp.task('scripts', [
   'scripts:vendor',
@@ -107,47 +122,13 @@ gulp.task('lint', () => {
 });
 
 
-gulp.task('templates', () => {
-  const hbs = require('handlebars');
-
-  const partials = gulp
-    .src('src/templates/**/_*.hbs')
-    .pipe(errorHandler())
-    .pipe(handlebars({
-      handlebars: hbs
-    }))
-    .pipe(wrap('Handlebars.registerPartial(<%= partName(file.relative) %>, Handlebars.template(<%= contents %>));', {}, {
-      imports: {
-        partName(fileName) {
-          return JSON.stringify(path.basename(fileName, '.js').substr(1));
-        }
-      }
-    }));
-
-
-  const templates = gulp
-    .src('src/templates/**/[^_]*.hbs')
-    .pipe(errorHandler())
-    .pipe(handlebars({
-      handlebars: hbs
-    }))
-    .pipe(wrap('Handlebars.template(<%= contents %>)'))
-    .pipe(declare({
-      namespace: 'templates',
-      noRedeclare: true
-    }));
-
-  return merge(partials, templates)
-    .pipe(concat('templates.js'))
-    .pipe(gulp.dest('public/js'));
-});
-
 gulp.task('static:html', () => {
   return gulp
     .src('src/index.html')
     .pipe(errorHandler())
     .pipe(gulp.dest('public'));
 });
+
 
 gulp.task('static:fonts', () => {
   return gulp
@@ -160,6 +141,7 @@ gulp.task('static:fonts', () => {
     .pipe(gulp.dest('public/fonts'));
 });
 
+
 gulp.task('static:images', function() {
   return gulp.src('src/img/**/*.+(png|jpg|gif|svg)')
     .pipe(cache(imagemin({
@@ -168,12 +150,14 @@ gulp.task('static:images', function() {
     .pipe(gulp.dest('public/img'));
 });
 
+
 gulp.task('static:json', () => {
   return gulp
     .src('src/js/*.json')
     .pipe(errorHandler())
     .pipe(gulp.dest('public/js'));
 });
+
 
 gulp.task('static', ['static:html', 'static:fonts', 'static:images', 'static:json'], () => {
   return gulp
@@ -197,8 +181,8 @@ gulp.task('build', (cb) => {
     'clean',
     'styles',
     'scripts',
+    'pug',
     'lint',
-    'templates',
     'static',
     cb
   );
@@ -210,7 +194,7 @@ gulp.task('watch', () => {
   gulp.watch(['src/js/**/*.js', '!src/js/vendor.js'], ['scripts:main', 'lint']);
   gulp.watch('!src/js/vendor.js', ['scripts:vendor']);
   gulp.watch('src/index.html', ['static:html']);
-  gulp.watch('src/templates/**/*.hbs', ['templates']);
+  gulp.watch('src/templates/**/*.pug', ['pug']);
 });
 
 
